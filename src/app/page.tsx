@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Container>
       <Hero />
-      <SectionTitle
+      {/* <SectionTitle
         preTitle="Nextly Benefits"
         title=" Why should you use this landing page"
       >
@@ -48,10 +48,10 @@ export default function Home() {
       <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.
-      </SectionTitle>
+      </SectionTitle> */}
 
-      <Faq />
-      <Cta />
+      {/* <Faq />
+      <Cta /> */}
     </Container>
   );
 }
