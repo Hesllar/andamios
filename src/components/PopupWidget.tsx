@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export function PopupWidget() {
   return (
     <Link
-      href="https://wa.me/1234567890"
+      href="https://wa.me/56948166780"
       target="_blank"
       rel="noopener noreferrer"
     >

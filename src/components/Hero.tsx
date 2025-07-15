@@ -1,11 +1,24 @@
-import Image from "next/image";
 import { Container } from "@/components/Container";
-import heroImg from "../../public/img/img1.webp";
+
+import { SwiperDesktop, SwiperMobile } from "./swiper";
+import imgClienteCarrera from "../../public/img/img_cliente_los_carrera.webp";
+import imgClienteEsval from "../../public/img/img_cliente_esval.webp";
+import Image from "next/image";
+import clsx from "clsx";
+
+const clients = [
+  {
+    path: imgClienteCarrera,
+  },
+  {
+    path: imgClienteEsval,
+  },
+];
 
 export const Hero = () => {
   return (
     <>
-      <Container className="flex flex-wrap lg:h-screen min-[1980px]:h-auto">
+      <Container className="flex flex-wrap ">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
@@ -18,18 +31,13 @@ export const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
-          <div className="">
-            <Image
-              src={heroImg}
-              width="400"
-              height="400"
-              className="object-contain rounded-lg shadow-2xl sm:rounded-b-md"
-              alt="Hero Illustration"
-              loading="eager"
-              placeholder="blur"
-            />
-          </div>
+        {/* Formato desktop */}
+        <div className=" hidden sm:flex items-center justify-center w-full lg:w-1/2">
+          <SwiperDesktop />
+        </div>
+        {/* Formato mobile */}
+        <div className="flex items-center justify-center w-full">
+          <SwiperMobile />
         </div>
       </Container>
       <Container>
@@ -38,22 +46,28 @@ export const Hero = () => {
             <h2 className="font-semibold">Nuestros Clientes</h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
+          <div
+            className={clsx(
+              "flex flex-wrap justify-center gap-5 mt-10 items-center",
+              {
+                "md:justify-around": clients.length > 3,
+                "justify-center": clients.length <= 3,
+                "max-w-6xl mx-auto": true,
+              }
+            )}
+          >
+            {/* <div className="pt-2 text-gray-400 dark:text-gray-400">
               <AmazonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <VerizonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <MicrosoftLogo />
-            </div>
-            <div className="pt-1 text-gray-400 dark:text-gray-400">
-              <NetflixLogo />
-            </div>
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <SonyLogo />
-            </div>
+            </div> */}
+
+            {clients.map((client, index) => (
+              <div
+                key={index}
+                className="pt-2 text-gray-400 dark:text-gray-400"
+              >
+                <Image src={client.path} alt={`Cliente ${index + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
       </Container>
