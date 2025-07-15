@@ -3,6 +3,7 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
+import logo from "../../public/img/logo.webp";
 
 export const Navbar = () => {
   const navigation = ["Inicio", "Nosotros", "Precios", "Contacto"];
@@ -12,18 +13,13 @@ export const Navbar = () => {
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo  */}
         <Link href="/">
-          <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-            <span>
-              <Image
-                src="/img/logo.svg"
-                width="32"
-                alt="N"
-                height="32"
-                className="w-8"
-              />
-            </span>
-            <span>Nextly</span>
-          </span>
+          <div className="flex items-center space-x-2 text-2xl font-medium text-trueGray-800 dark:text-gray-100">
+            <Image src={logo} width="45" alt="N" height="45" className="" />
+            <div>
+              <p>Andamios</p>
+              <p>J&V</p>
+            </div>
+          </div>
         </Link>
 
         {/* get started  */}
