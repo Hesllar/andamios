@@ -32,7 +32,7 @@ export const Hero = () => {
           </div>
         </div>
         {/* Formato desktop */}
-        <div className=" hidden sm:flex items-center justify-center w-full lg:w-1/2">
+        <div className="  sm:flex items-center justify-center w-full lg:w-1/2">
           <SwiperDesktop />
         </div>
         {/* Formato mobile */}

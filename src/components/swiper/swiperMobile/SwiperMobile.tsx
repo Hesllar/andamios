@@ -16,10 +16,6 @@ import styles from "./styles.module.css";
 export const SwiperMobile = () => {
   return (
     <Swiper
-      // pagination={true}
-      // modules={[Pagination, Zoom, Autoplay]}
-      // className={styles.swiper}
-      // navigation
       modules={[Navigation, Pagination, Autoplay, Zoom]}
       spaceBetween={30}
       slidesPerView={1}
@@ -36,14 +32,7 @@ export const SwiperMobile = () => {
         waitForTransition: true, // Espera que termine la transición
         stopOnLastSlide: false, // No se detiene en el último slide
       }}
-      zoom={{
-        maxRatio: 3, // Zoom máximo 3x
-        minRatio: 1, // Zoom mínimo 1x (original)
-        toggle: true, // Permite toggle con doble clic
-        containerClass: "swiper-zoom-container",
-        zoomedSlideClass: "swiper-slide-zoomed",
-      }}
-      className={styles.swiper}
+      className={`${styles.swiper} shadow-2xl`}
     >
       <SwiperSlide>
         <Image
