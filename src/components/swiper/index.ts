@@ -1,2 +1,2 @@
-export { SwiperDesktop } from "./swiperDesktop/SwiperDesktop";
-export { SwiperMobile } from "./swiperMobile/SwiperMobile";
+export * from "./swiperDesktop/SwiperDesktop";
+export * from "./swiperMobile/SwiperMobile";

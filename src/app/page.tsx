@@ -8,10 +8,14 @@ import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
 
 import { benefitOne, benefitTwo } from "@/components/data";
+import { OurClients } from "@/components/clients";
+import { Services } from "@/components/services";
 export default function Home() {
   return (
     <Container>
       <Hero />
+      <Services />
+      <OurClients />
       {/* <SectionTitle
         preTitle="Nextly Benefits"
         title=" Why should you use this landing page"

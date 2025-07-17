@@ -1,0 +1,60 @@
+import Image from "next/image";
+import React from "react";
+import img2 from "../../../public/img/img2.webp";
+import { Container } from "../Container";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Armado y desmontaje",
+    description: `Servicio especializado en montaje y desmontaje de andamios tipo
+              Euro, con seguridad, eficiencia y cumplimiento en cada proyecto.`,
+    image: img2,
+  },
+  {
+    title: "Arriendo de andamios",
+    description: `Arriendo de andamios Euro certificados, ideales para obras que
+              requieren seguridad, estabilidad y eficiencia.`,
+    image: img2,
+  },
+];
+
+export const Services = () => {
+  return (
+    <Container className="flex flex-col items-center gap-6">
+      <h2 className="text-3xl font-bold mb-6 items-center text-center text-gray-900 dark:text-white">
+        Nuestros servicios
+      </h2>
+      <div className="flex flex-wrap w-full justify-around gap-8 lg:gap-0">
+        {services.map((service) => (
+          <div className="bg-white shadow-2xl border border-gray-200 rounded-lg h-[500px] sm:max-w-sm sm:h-[650px] dark:bg-gray-800 dark:border-gray-700">
+            <Image
+              src={service.image}
+              alt="img2"
+              className="rounded-t-lg h-1/2 sm:h-2/3 object-cover sm:object-fill"
+            />
+            <div className="px-4 py-2 ">
+              <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
+                {service.title}
+              </h5>
+
+              <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
+                {service.description}
+              </p>
+              <Link
+                href="https://wa.me/56948166780"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-4 items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Contactar
+                <FaArrowRight />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
+};
