@@ -28,7 +28,10 @@ export const Services = () => {
       </h2>
       <div className="flex flex-wrap w-full justify-around gap-8 lg:gap-0">
         {services.map((service) => (
-          <div className="bg-white shadow-2xl border border-gray-200 rounded-lg h-[500px] sm:max-w-sm sm:h-[650px] dark:bg-gray-800 dark:border-gray-700">
+          <div
+            key={service.title}
+            className="bg-white shadow-2xl border border-gray-200 rounded-lg h-[500px] sm:max-w-sm sm:h-[650px] dark:bg-gray-800 dark:border-gray-700"
+          >
             <Image
               src={service.image}
               alt="img2"
