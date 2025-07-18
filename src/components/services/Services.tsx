@@ -23,21 +23,25 @@ const services = [
 export const Services = () => {
   return (
     <Container className="flex flex-col items-center gap-6">
-      <h2 className="text-3xl font-bold mb-6 items-center text-center text-gray-900 dark:text-white">
+      <h2 className="w-full border-x-0 border-dashed border-2 border-gray-700 text-3xl font-bold mb-6 items-center text-center p-4 text-gray-900 dark:text-white">
         Nuestros servicios
       </h2>
       <div className="flex flex-wrap w-full justify-around gap-8 lg:gap-0">
         {services.map((service) => (
           <div
             key={service.title}
-            className="bg-white shadow-2xl border border-gray-200 rounded-lg h-[500px] sm:max-w-sm sm:h-[650px] dark:bg-gray-800 dark:border-gray-700"
+            className="
+            bg-white shadow-2xl border border-gray-200 rounded-lg h-[500px] 
+            ease-in-out duration-300
+            sm:max-w-sm sm:h-[650px] dark:bg-gray-800 dark:border-gray-700
+            hover:lg:scale-105"
           >
             <Image
               src={service.image}
               alt="img2"
               className="rounded-t-lg h-1/2 sm:h-2/3 object-cover sm:object-fill"
             />
-            <div className="px-4 py-2 ">
+            <div className="flex flex-col justify-between px-4 py-2 h-2/6">
               <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
                 {service.title}
               </h5>
