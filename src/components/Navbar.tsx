@@ -6,7 +6,7 @@ import { Disclosure } from "@headlessui/react";
 import logo from "../../public/img/logo.webp";
 
 export const Navbar = () => {
-  const navigation = ["Inicio", "Nosotros", "Precios", "Contacto"];
+  const navigation = ["Inicio", "Nosotros", "Galeria", "Contacto"];
 
   return (
     <div className="w-full fixed top-0 z-50 bg-white sm:bg-white/85 sm:backdrop-blur-3xl dark:bg-gray-900 shadow-md">
