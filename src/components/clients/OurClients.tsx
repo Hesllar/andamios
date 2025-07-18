@@ -18,7 +18,7 @@ export const OurClients = () => {
   return (
     <Container>
       <div className="flex flex-col justify-center gap-4">
-        <div className="text-3xl text-center text-gray-700 dark:text-white">
+        <div className="w-full border-x-0 border-dashed border-2 border-gray-700 p-6 text-3xl text-center text-gray-700 dark:text-white dark:border-white">
           <h2 className="font-semibold">Nuestros Clientes</h2>
         </div>
 
@@ -32,10 +32,6 @@ export const OurClients = () => {
             }
           )}
         >
-          {/* <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <AmazonLogo />
-            </div> */}
-
           {clients.map((client, index) => (
             <div key={index} className="pt-2 text-gray-400 dark:text-gray-400">
               <Image src={client.path} alt={`Cliente ${index + 1}`} />

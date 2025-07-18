@@ -23,7 +23,7 @@ const services = [
 export const Services = () => {
   return (
     <Container className="flex flex-col items-center gap-6">
-      <h2 className="w-full border-x-0 border-dashed border-2 border-gray-700 text-3xl font-bold mb-6 items-center text-center p-4 text-gray-900 dark:text-white">
+      <h2 className="w-full border-x-0 border-dashed border-2 border-gray-700 text-3xl font-bold mb-6 items-center text-center p-4 text-gray-700 dark:text-white dark:border-white">
         Nuestros servicios
       </h2>
       <div className="flex flex-wrap w-full justify-around gap-8 lg:gap-0">
@@ -41,7 +41,7 @@ export const Services = () => {
               alt="img2"
               className="rounded-t-lg h-1/2 sm:h-2/3 object-cover sm:object-fill"
             />
-            <div className="flex flex-col justify-between px-4 py-2 h-2/6">
+            <div className="flex flex-col justify-between px-4 py-2 h-1/2 sm:h-2/6">
               <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
                 {service.title}
               </h5>
@@ -53,7 +53,8 @@ export const Services = () => {
                 href="https://wa.me/56948166780"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-4 items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="flex justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 
+                font-medium rounded-lg text-lg px-3 py-3 items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Contactar
                 <FaArrowRight />
