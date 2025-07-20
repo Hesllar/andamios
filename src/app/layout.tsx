@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PopupWidget } from "@/components/PopupWidget";
 
@@ -26,7 +25,6 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.className} fade-in`}>
         <ThemeProvider attribute="class">
-          <Navbar />
           <div className="mt-24">{children}</div>
           <Footer />
           <PopupWidget />

@@ -5,6 +5,10 @@ import imgClienteCarrera from "../../../public/img/img_cliente_los_carrera.webp"
 import imgClienteEsval from "../../../public/img/img_cliente_esval.webp";
 import { Container } from "../Container";
 
+interface Props {
+  refSectionOueClients: React.RefObject<HTMLDivElement>;
+}
+
 const clients = [
   {
     path: imgClienteCarrera,
@@ -14,9 +18,9 @@ const clients = [
   },
 ];
 
-export const OurClients = () => {
+export const OurClients = ({ refSectionOueClients }: Props) => {
   return (
-    <Container>
+    <Container refGeneric={refSectionOueClients}>
       <div className="flex flex-col justify-center gap-4">
         <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
           <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">

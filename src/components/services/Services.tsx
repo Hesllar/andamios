@@ -5,6 +5,10 @@ import { Container } from "../Container";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
+interface Props {
+  refSectionServices: React.RefObject<HTMLDivElement>;
+}
+
 const services = [
   {
     title: "Armado y desmontaje",
@@ -20,9 +24,12 @@ const services = [
   },
 ];
 
-export const Services = () => {
+export const Services = ({ refSectionServices }: Props) => {
   return (
-    <Container className="flex flex-col items-center gap-16">
+    <Container
+      className="flex flex-col items-center gap-16"
+      refGeneric={refSectionServices}
+    >
       <div className=" w-full bg-gradient-to-b from-red-500 to-gray-200 rounded-lg">
         <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
           Nuestros servicios
