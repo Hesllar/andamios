@@ -18,10 +18,11 @@ export const OurClients = () => {
   return (
     <Container>
       <div className="flex flex-col justify-center gap-4">
-        <div className="w-full border-x-0 border-dashed border-2 border-gray-700 p-6 text-3xl text-center text-gray-700 dark:text-white dark:border-white">
-          <h2 className="font-semibold">Nuestros Clientes</h2>
+        <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
+          <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
+            Nuestros Clientes
+          </h2>
         </div>
-
         <div
           className={clsx(
             "flex flex-wrap justify-center gap-5 mt-10 items-center",

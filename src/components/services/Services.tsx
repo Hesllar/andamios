@@ -22,10 +22,12 @@ const services = [
 
 export const Services = () => {
   return (
-    <Container className="flex flex-col items-center gap-6">
-      <h2 className="w-full border-x-0 border-dashed border-2 border-gray-700 text-3xl font-bold mb-6 items-center text-center p-4 text-gray-700 dark:text-white dark:border-white">
-        Nuestros servicios
-      </h2>
+    <Container className="flex flex-col items-center gap-16">
+      <div className=" w-full bg-gradient-to-b from-red-500 to-gray-200 rounded-lg">
+        <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
+          Nuestros servicios
+        </h2>
+      </div>
       <div className="flex flex-wrap w-full justify-around gap-8 lg:gap-0">
         {services.map((service) => (
           <div
