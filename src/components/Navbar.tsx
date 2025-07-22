@@ -24,14 +24,14 @@ export const Navbar = ({ sectionRef }: Props) => {
   const scrollToElement = useScrollToElement();
 
   const handleOnClick = (sectionId: number) => {
-    scrollToElement(sectionRef[sectionId], 150, "smooth");
+    scrollToElement(sectionRef[sectionId], 100, "smooth");
   };
 
   return (
     <div className="w-full fixed top-0 z-50  bg-white sm:rounded sm:bg-white/85 sm:backdrop-blur-3xl dark:bg-gray-900 shadow-md">
       <nav
         className={clsx(
-          "container relative flex flex-wrap items-center justify-between mx-auto lg:justify-between transition-all duration-300 ease-in-out",
+          "container relative flex flex-wrap items-center justify-between mx-auto transition-all duration-300 ease-in-out",
           {
             "p-4 lg:p-8": inElement,
             "p-4 lg:py-2 lg:px-6": !inElement,
@@ -87,7 +87,7 @@ export const Navbar = ({ sectionRef }: Props) => {
 
           <div
             className={clsx(
-              "flex flex-wrap w-full my-5 transition-all duration-300 ease-in-out lg:hidden",
+              "flex flex-wrap w-full transition-all duration-300 ease-in-out lg:hidden",
               {
                 "opacity-100 visible translate-y-0": openMenuMobile,
                 "opacity-0 invisible -translate-y-2 h-0": !openMenuMobile,
@@ -96,7 +96,6 @@ export const Navbar = ({ sectionRef }: Props) => {
           >
             {navigation.map((item, index) => (
               <span
-                key={item}
                 onClick={() => {
                   setOpenMenuMobile(!openMenuMobile);
                   handleOnClick(index);
