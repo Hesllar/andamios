@@ -1,4 +1,4 @@
-import React from "react";
+"use clinet";
 import { Container } from "../Container";
 import { GalleryDesktop } from "./GalleryDesktop";
 import { GalleryMobile } from "./GalleryMobile";
@@ -12,14 +12,16 @@ const images = [img1, img2, img3, img4];
 
 export const Gallery = () => {
   return (
-    <Container className="flex flex-col justify-center gap-10">
-      <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
-        <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
-          Galería
-        </h2>
-      </div>
-      <GalleryDesktop images={images} />
-      <GalleryMobile images={images} />
-    </Container>
+    <>
+      <Container className="flex flex-col justify-center gap-10">
+        <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
+          <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
+            Galería
+          </h2>
+        </div>
+        <GalleryDesktop images={images} />
+        <GalleryMobile images={images} />
+      </Container>
+    </>
   );
 };
