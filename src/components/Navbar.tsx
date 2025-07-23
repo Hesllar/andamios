@@ -96,6 +96,7 @@ export const Navbar = ({ sectionRef }: Props) => {
           >
             {navigation.map((item, index) => (
               <span
+                key={item}
                 onClick={() => {
                   setOpenMenuMobile(!openMenuMobile);
                   handleOnClick(index);
