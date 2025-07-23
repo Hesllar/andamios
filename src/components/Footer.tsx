@@ -4,13 +4,13 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Container } from "@/components/Container";
 
 export function Footer() {
-  const navigation = ["Inicio", "Nosotros", "Precios", "Contacto"];
+  // const navigation = ["Inicio", "Nosotros", "Precios", "Contacto"];
   const legal = ["Terminos", "Privacidad"];
   return (
     <div className="relative">
       <Container>
         <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
-          <div>
+          {/* <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
                 <Link
@@ -22,7 +22,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
