@@ -8,6 +8,7 @@ import { Hero } from "@/components/Hero";
 import { OurClients } from "@/components/clients";
 import { Services } from "@/components/services";
 import { Navbar } from "@/components/Navbar";
+import { Gallery } from "@/components/gallery";
 
 export default function Home() {
   const refSectionHero = useRef<HTMLDivElement>(null);
@@ -22,6 +23,7 @@ export default function Home() {
       <Container>
         <Hero refSectionHero={refSectionHero} />
         <Services refSectionServices={refSectionServices} />
+        <Gallery />
         <OurClients refSectionOueClients={refSectionOueClients} />
       </Container>
     </>
