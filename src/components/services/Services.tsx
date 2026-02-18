@@ -59,7 +59,7 @@ export const Services = ({ refSectionServices }: Props) => {
                 {service.description}
               </p>
               <Link
-                href="https://wa.me/56948166780"
+                href="https://wa.me/56962109122"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex justify-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 
