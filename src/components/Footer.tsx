@@ -40,7 +40,7 @@ export function Footer() {
             <div>Siguenos</div>
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
               <a
-                href="https://facebook.com/web3templates"
+                href="https://web.facebook.com/profile.php?id=61588199405677"
                 target="_blank"
                 rel="noopener"
               >
@@ -48,7 +48,7 @@ export function Footer() {
                 <FaFacebook size={26} />
               </a>
               <a
-                href="https://instagram.com/web3templates"
+                href="https://www.instagram.com/jaramilloandamiospro/"
                 target="_blank"
                 rel="noopener"
               >
