@@ -1,1 +1,1 @@
-export * from "./useScrollToElement ";
+export * from "./useScrollToElement";

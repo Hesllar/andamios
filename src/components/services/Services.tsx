@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import img2 from "../../../public/img/img2.webp";
-import { Container } from "../Container";
+import { Container } from "@/components/ui";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 

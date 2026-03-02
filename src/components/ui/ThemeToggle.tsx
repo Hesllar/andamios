@@ -1,14 +1,13 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
-const ThemeChanger = () => {
+export const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
@@ -21,7 +20,6 @@ const ThemeChanger = () => {
           className="bg-white p-2 text-gray-300 rounded-full outline-none focus:outline-none "
         >
           <span className="sr-only">Light Mode</span>
-
           <IoMoonOutline className="h-[24px] w-[24px]  text-black" />
         </button>
       ) : (
@@ -36,5 +34,3 @@ const ThemeChanger = () => {
     </div>
   );
 };
-
-export default ThemeChanger;

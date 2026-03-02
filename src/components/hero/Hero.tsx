@@ -1,6 +1,7 @@
-import { Container } from "@/components/Container";
+import { Container } from "@/components/ui";
+import { SwiperDesktop } from "./SwiperDesktop";
+import { SwiperMobile } from "./SwiperMobile";
 
-import { SwiperDesktop, SwiperMobile } from "./swiper";
 interface Props {
   refSectionHero: React.RefObject<HTMLDivElement | null>;
 }
@@ -20,11 +21,11 @@ export const Hero = ({ refSectionHero }: Props) => {
           </p>
         </div>
       </div>
-      {/* Formato desktop */}
+      {/* Desktop */}
       <div className="  sm:flex items-center justify-center w-full lg:w-1/2">
         <SwiperDesktop />
       </div>
-      {/* Formato mobile */}
+      {/* Mobile */}
       <div className="flex items-center justify-center w-full">
         <SwiperMobile />
       </div>

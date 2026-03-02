@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
+  "name": "andamios-jv",
   "version": "2.0.0",
-  "description": "Nextly Landing Page Template",
+  "description": "Sitio web de Andamios J&V - Arriendo de andamios y servicios de construcción",
   "private": true,
   "scripts": {
     "dev": "next dev",

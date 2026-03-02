@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
-import logo from "../../public/img/logo.webp";
 import clsx from "clsx";
 import { useState } from "react";
+
+import { ThemeToggle } from "@/components/ui";
 import { useScrollToElement } from "@/hooks";
+import logo from "../../../public/img/logo.webp";
 
 interface Props {
   sectionRef: React.RefObject<HTMLDivElement | null>[];
@@ -18,9 +18,7 @@ const navigation = ["Inicio", "Servicios", "Galería", "Clientes"];
 
 export const Navbar = ({ sectionRef }: Props) => {
   const [inElement, setInElement] = useState(false);
-
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
-
   const scrollToElement = useScrollToElement();
 
   const handleOnClick = (sectionId: number) => {
@@ -40,7 +38,7 @@ export const Navbar = ({ sectionRef }: Props) => {
         onMouseEnter={() => setInElement(true)}
         onMouseLeave={() => setInElement(false)}
       >
-        {/* Logo  */}
+        {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2 text-2xl font-medium text-trueGray-800 dark:text-gray-100">
             <Image src={logo} width="45" alt="N" height="45" className="" />
@@ -51,9 +49,9 @@ export const Navbar = ({ sectionRef }: Props) => {
           </div>
         </Link>
 
-        {/* get started  */}
+        {/* Theme toggle */}
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-          <ThemeChanger />
+          <ThemeToggle />
         </div>
 
         <>
@@ -109,7 +107,7 @@ export const Navbar = ({ sectionRef }: Props) => {
           </div>
         </>
 
-        {/* menu  */}
+        {/* Desktop menu */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((item, index) => (

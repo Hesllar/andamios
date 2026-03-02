@@ -1,5 +1,5 @@
 "use client";
-import { Container } from "../Container";
+import { Container } from "@/components/ui";
 import { GalleryDesktop } from "./GalleryDesktop";
 import { GalleryMobile } from "./GalleryMobile";
 

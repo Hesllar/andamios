@@ -1,16 +1,7 @@
 import { useCallback, RefObject } from "react";
 
-// Tipos para las opciones de scroll behavior
 type ScrollBehavior = "auto" | "smooth" | "instant";
 
-// Interface para opciones más avanzadas (opcional)
-interface ScrollOptions {
-  offset?: number;
-  behavior?: ScrollBehavior;
-  block?: "start" | "center" | "end" | "nearest";
-}
-
-// Hook personalizado básico
 export const useScrollToElement = () => {
   const scrollToElement = useCallback(
     (
