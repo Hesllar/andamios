@@ -6,7 +6,7 @@ import imgClienteEsval from "../../../public/img/img_cliente_esval.webp";
 import { Container } from "../Container";
 
 interface Props {
-  refSectionOueClients: React.RefObject<HTMLDivElement>;
+  refSectionOueClients: React.RefObject<HTMLDivElement | null>;
 }
 
 const clients = [
@@ -34,7 +34,7 @@ export const OurClients = ({ refSectionOueClients }: Props) => {
               "md:justify-around": clients.length > 3,
               "justify-center": clients.length <= 3,
               "max-w-6xl mx-auto": true,
-            }
+            },
           )}
         >
           {clients.map((client, index) => (

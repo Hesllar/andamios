@@ -1,6 +1,6 @@
 export interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {};
+  }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }

@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
 interface Props {
-  refSectionServices: React.RefObject<HTMLDivElement>;
+  refSectionServices: React.RefObject<HTMLDivElement | null>;
 }
 
 const services = [

@@ -3,7 +3,7 @@ import React from "react";
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
-  refGeneric?: React.RefObject<HTMLDivElement>;
+  refGeneric?: React.RefObject<HTMLDivElement | null>;
 }
 
 export function Container(props: Readonly<ContainerProps>) {

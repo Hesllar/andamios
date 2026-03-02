@@ -1,4 +1,4 @@
-"use clinet";
+"use client";
 import { Container } from "../Container";
 import { GalleryDesktop } from "./GalleryDesktop";
 import { GalleryMobile } from "./GalleryMobile";
@@ -9,7 +9,7 @@ import img3 from "../../../public/img/img3.webp";
 import img4 from "../../../public/img/img4.webp";
 
 interface Props {
-  refSectionGallery: React.RefObject<HTMLDivElement>;
+  refSectionGallery: React.RefObject<HTMLDivElement | null>;
 }
 
 const images = [img1, img2, img3, img4];

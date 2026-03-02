@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useScrollToElement } from "@/hooks";
 
 interface Props {
-  sectionRef: React.RefObject<HTMLDivElement>[];
+  sectionRef: React.RefObject<HTMLDivElement | null>[];
 }
 
 const navigation = ["Inicio", "Servicios", "Galería", "Clientes"];
@@ -35,7 +35,7 @@ export const Navbar = ({ sectionRef }: Props) => {
           {
             "p-4 lg:p-8": inElement,
             "p-4 lg:py-2 lg:px-6": !inElement,
-          }
+          },
         )}
         onMouseEnter={() => setInElement(true)}
         onMouseLeave={() => setInElement(false)}
@@ -91,7 +91,7 @@ export const Navbar = ({ sectionRef }: Props) => {
               {
                 "opacity-100 visible translate-y-0": openMenuMobile,
                 "opacity-0 invisible -translate-y-2 h-0": !openMenuMobile,
-              }
+              },
             )}
           >
             {navigation.map((item, index) => (

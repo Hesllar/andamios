@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 
 import { SwiperDesktop, SwiperMobile } from "./swiper";
 interface Props {
-  refSectionHero: React.RefObject<HTMLDivElement>;
+  refSectionHero: React.RefObject<HTMLDivElement | null>;
 }
 
 export const Hero = ({ refSectionHero }: Props) => {

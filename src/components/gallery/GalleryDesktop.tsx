@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
@@ -21,7 +23,7 @@ export const GalleryDesktop = ({ images }: Props) => {
                 {
                   " hover:origin-bottom hover:-rotate-2": index % 2 === 0,
                   " hover:origin-top hover:rotate-2": index % 2 !== 0,
-                }
+                },
               )}
             >
               <Image
