@@ -42,10 +42,6 @@ export const Navbar = ({ sectionRef }: Props) => {
         <Link href="/">
           <div className="flex items-center space-x-2 text-2xl font-medium text-trueGray-800 dark:text-gray-100">
             <Image src={logo} width="100" alt="N" height="100" className="" />
-            <div>
-              <p>Andamios</p>
-              <p>J&V</p>
-            </div>
           </div>
         </Link>
 

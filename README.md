@@ -1,6 +1,6 @@
-# Andamios J&V
+# Jaramillo Andamios Pro
 
-Sitio web de **Andamios J&V**, empresa de arriendo de andamios y servicios de construcción en Chile. Desarrollado con Next.js, React y Tailwind CSS.
+Sitio web de **Jaramillo Andamios Pro**, empresa de arriendo de andamios y servicios de construcción en Chile. Desarrollado con Next.js, React y Tailwind CSS.
 
 ## Tech Stack
 

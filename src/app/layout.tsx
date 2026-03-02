@@ -8,7 +8,7 @@ import { Footer, PopupWidget } from "@/components/layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Andamios - J&V",
+  title: "Jaramillo Andamios Pro",
   description: "Arriendos de andamios y servicios de construcción en Chile",
   icons: {
     icon: "/favicon.ico",
