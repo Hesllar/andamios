@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-import { Footer, PopupWidget } from "@/components/layout";
+import { Footer, PopupWidget, BackgroundScene } from "@/components/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.className} fade-in`}>
         <ThemeProvider attribute="class">
+          <BackgroundScene />
           <div className="mt-24">{children}</div>
           <Footer />
           <PopupWidget />
