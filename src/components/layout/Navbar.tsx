@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import { ThemeToggle } from "@/components/ui";
 import { useScrollToElement } from "@/hooks";
-import logo from "../../../public/img/logo.webp";
+import logo from "../../../public/img/logo.svg";
 
 interface Props {
   sectionRef: React.RefObject<HTMLDivElement | null>[];
@@ -41,7 +41,7 @@ export const Navbar = ({ sectionRef }: Props) => {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2 text-2xl font-medium text-trueGray-800 dark:text-gray-100">
-            <Image src={logo} width="45" alt="N" height="45" className="" />
+            <Image src={logo} width="100" alt="N" height="100" className="" />
             <div>
               <p>Andamios</p>
               <p>J&V</p>
