@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 import { Footer, PopupWidget, BackgroundScene } from "@/components/layout";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Jaramillo Andamios Pro",
@@ -22,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.className} fade-in`}>
+      <body className={`${montserrat.className} fade-in`}>
         <ThemeProvider attribute="class">
           <BackgroundScene />
           <div className="mt-24">{children}</div>

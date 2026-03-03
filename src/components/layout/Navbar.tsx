@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import { ThemeToggle } from "@/components/ui";
 import { useScrollToElement } from "@/hooks";
-import logo from "../../../public/img/logo.svg";
+import logo from "../../../public/img/logo.png";
 
 interface Props {
   sectionRef: React.RefObject<HTMLDivElement | null>[];
@@ -26,7 +26,7 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <div className="w-full fixed top-0 z-50  bg-white sm:rounded sm:bg-white/85 sm:backdrop-blur-3xl dark:bg-gray-900 shadow-md">
+    <div className="w-full fixed top-0 z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-white/20 dark:border-gray-700/40 shadow-sm">
       <nav
         className={clsx(
           "container relative flex flex-wrap items-center justify-between mx-auto transition-all duration-300 ease-in-out",
@@ -40,15 +40,23 @@ export const Navbar = ({ sectionRef }: Props) => {
       >
         {/* Logo */}
         <Link href="/">
-          <div className="flex items-center space-x-2 text-2xl font-medium text-trueGray-800 dark:text-gray-100">
-            <Image src={logo} width="100" alt="N" height="100" className="" />
+          <div className="flex items-center">
+            <Image
+              src={logo}
+              width={160}
+              height={56}
+              alt="Jaramillo Andamios Pro"
+              className="drop-shadow-sm"
+              style={{ width: 160, height: "auto" }}
+              priority
+            />
           </div>
         </Link>
 
         {/* Theme toggle */}
-        <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
+        {/* <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
           <ThemeToggle />
-        </div>
+        </div> */}
 
         <>
           <button
