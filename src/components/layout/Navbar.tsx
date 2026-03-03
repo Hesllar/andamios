@@ -6,7 +6,6 @@ import { Disclosure } from "@headlessui/react";
 import clsx from "clsx";
 import { useState } from "react";
 
-import { ThemeToggle } from "@/components/ui";
 import { useScrollToElement } from "@/hooks";
 import logo from "../../../public/img/logo.png";
 
@@ -52,11 +51,6 @@ export const Navbar = ({ sectionRef }: Props) => {
             />
           </div>
         </Link>
-
-        {/* Theme toggle */}
-        {/* <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-          <ThemeToggle />
-        </div> */}
 
         <>
           <button

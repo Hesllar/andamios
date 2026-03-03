@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 import { Footer, PopupWidget, BackgroundScene } from "@/components/layout";
@@ -25,14 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" className="dark">
       <body className={`${montserrat.className} fade-in`}>
-        <ThemeProvider attribute="class">
-          <BackgroundScene />
-          <div className="mt-24">{children}</div>
-          <Footer />
-          <PopupWidget />
-        </ThemeProvider>
+        <BackgroundScene />
+        <div className="mt-24">{children}</div>
+        <Footer />
+        <PopupWidget />
       </body>
     </html>
   );
