@@ -22,10 +22,12 @@ export const OurClients = ({ refSectionOurClients }: Props) => {
   return (
     <Container refGeneric={refSectionOurClients}>
       <div className="flex flex-col justify-center gap-4">
-        <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
-          <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
+        <div className="flex items-center gap-4 w-full">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-orange-500/50" />
+          <h2 className="text-3xl font-bold text-white tracking-wide uppercase px-2">
             Nuestros Clientes
           </h2>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-orange-500/50" />
         </div>
         <div
           className={clsx(
@@ -38,7 +40,10 @@ export const OurClients = ({ refSectionOurClients }: Props) => {
           )}
         >
           {clients.map((client, index) => (
-            <div key={index} className="pt-2 text-gray-400 dark:text-gray-400">
+            <div
+              key={index}
+              className="p-4 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/15 transition-all duration-200"
+            >
               <Image src={client.path} alt={`Cliente ${index + 1}`} />
             </div>
           ))}

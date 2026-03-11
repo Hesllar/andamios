@@ -25,7 +25,7 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <div className="w-full fixed top-0 z-50 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-b border-white/20 dark:border-gray-700/40 shadow-sm">
+    <div className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40">
       <nav
         className={clsx(
           "container relative flex flex-wrap items-center justify-between mx-auto transition-all duration-300 ease-in-out",
@@ -58,7 +58,7 @@ export const Navbar = ({ sectionRef }: Props) => {
               setOpenMenuMobile(!openMenuMobile);
             }}
             aria-label="Toggle Menu"
-            className="px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
+            className="px-2 py-1 text-gray-300 rounded-md lg:hidden hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
           >
             <svg
               className="w-6 h-6 fill-current"
@@ -97,7 +97,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                   setOpenMenuMobile(!openMenuMobile);
                   handleOnClick(index);
                 }}
-                className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                className="w-full px-4 py-2 -ml-4 text-gray-300 rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
               >
                 {item}
               </span>
@@ -116,7 +116,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                     setInElement(false);
                     handleOnClick(index);
                   }}
-                  className="cursor-pointer inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className="cursor-pointer inline-block px-4 py-2 text-lg font-medium text-gray-200 no-underline rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
                 >
                   {item}
                 </span>

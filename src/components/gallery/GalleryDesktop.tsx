@@ -19,7 +19,7 @@ export const GalleryDesktop = ({ images }: Props) => {
             <div
               onClick={() => setImageActive(image)}
               className={clsx(
-                "relative z-10 w-full border-4 border-gray-200  rounded-lg overflow-hidden h-[500px]",
+                "relative z-10 w-full border-2 border-orange-500/30 rounded-lg overflow-hidden h-[500px] hover:border-orange-500/70 transition-all duration-300",
                 {
                   " hover:origin-bottom hover:-rotate-2": index % 2 === 0,
                   " hover:origin-top hover:rotate-2": index % 2 !== 0,

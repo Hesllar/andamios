@@ -21,10 +21,12 @@ export const Gallery = ({ refSectionGallery }: Props) => {
         className="flex flex-col justify-center gap-10"
         refGeneric={refSectionGallery}
       >
-        <div className=" w-full bg-gradient-to-b from-gray-200 to-red-500 rounded-lg">
-          <h2 className=" text-3xl font-bold items-center text-center p-8 text-white dark:text-white">
+        <div className="flex items-center gap-4 w-full">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-orange-500/50" />
+          <h2 className="text-3xl font-bold text-white tracking-wide uppercase px-2">
             Galería
           </h2>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-orange-500/50" />
         </div>
         <GalleryDesktop images={images} />
         <GalleryMobile images={images} />

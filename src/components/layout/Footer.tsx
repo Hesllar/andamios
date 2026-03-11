@@ -8,14 +8,14 @@ export function Footer() {
   return (
     <div className="relative">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
+        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-orange-500/20 lg:grid-cols-5">
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
                 <Link
                   key={index}
                   href="/"
-                  className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
+                  className="w-full px-4 py-2 text-gray-400 rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
                 >
                   {item}
                 </Link>
@@ -23,12 +23,13 @@ export function Footer() {
             </div>
           </div>
           <div className="">
-            <div>Siguenos</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
+            <div>Síguenos</div>
+            <div className="flex mt-5 space-x-5 text-gray-400">
               <a
                 href="https://web.facebook.com/profile.php?id=61588199405677"
                 target="_blank"
                 rel="noopener"
+                className="hover:text-orange-400 transition-colors"
               >
                 <span className="sr-only">Facebook</span>
                 <FaFacebook size={26} />
@@ -37,6 +38,7 @@ export function Footer() {
                 href="https://www.instagram.com/jaramilloandamiospro/"
                 target="_blank"
                 rel="noopener"
+                className="hover:text-orange-400 transition-colors"
               >
                 <span className="sr-only">Instagram</span>
                 <FaInstagram size={26} />
