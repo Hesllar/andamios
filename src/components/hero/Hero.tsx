@@ -22,20 +22,24 @@ export const Hero = ({ refSectionHero }: Props) => {
               Andamios Pro
             </span>
           </h1>
-          <p className="py-5 text-xl leading-normal text-gray-300 lg:text-xl xl:text-2xl">
+          <p className="py-5 text-xl leading-normal text-gray-200 lg:text-xl xl:text-2xl">
             Brindamos un servicio integral, seguro y puntual, adaptado a cada
             proyecto. Trabajamos con responsabilidad y compromiso, desde
             pequeñas obras hasta grandes construcciones.
           </p>
-          <Link
-            href="https://wa.me/56962109122"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg shadow-lg shadow-orange-600/30 hover:from-orange-500 hover:to-amber-500 transition-all duration-200"
-          >
-            Solicitar cotización
-            <FaArrowRight size={14} />
-          </Link>
+          <div className="w-full flex justify-center lg:justify-start">
+            <Link
+              href="https://wa.me/56962109122"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-[90%] lg:w-auto  px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg shadow-lg shadow-orange-600/30 hover:from-orange-500 hover:to-amber-500 transition-all duration-200"
+            >
+              <div className="inline-flex items-center gap-2">
+                <span>Solicitar cotización</span>
+                <FaArrowRight size={14} />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       {/* Desktop */}
