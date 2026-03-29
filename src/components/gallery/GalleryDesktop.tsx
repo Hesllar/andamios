@@ -40,19 +40,17 @@ export const GalleryDesktop = ({ images }: Props) => {
 
       {imageActive && (
         <div
-          className="hidden fixed inset-0 bg-black bg-opacity-80 lg:flex items-center justify-center z-50 "
+          className="hidden fixed inset-0 bg-black bg-opacity-80 lg:flex items-center justify-center z-50"
           onClick={() => setImageActive(null)}
         >
-          <div className="relative">
-            <div className="w-[800px] h-[800px]">
-              <Image
-                src={imageActive.src}
-                alt="Active Image"
-                fill
-                className="object-fill"
-                sizes="800px"
-              />
-            </div>
+          <div className="relative w-[90vw] h-[90vh]">
+            <Image
+              src={imageActive.src}
+              alt="Active Image"
+              fill
+              className="object-contain"
+              sizes="90vw"
+            />
             <button
               className="absolute top-2 right-2 text-white text-2xl"
               onClick={() => setImageActive(null)}
