@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import { FaArrowRight } from "react-icons/fa";
 import { Container } from "@/components/ui";
 import { SwiperDesktop } from "./SwiperDesktop";
 import { SwiperMobile } from "./SwiperMobile";
+
+import imgAndamioDosD from "../../../public/img/andamios-2d.webp";
 
 interface Props {
   refSectionHero: React.RefObject<HTMLDivElement | null>;
@@ -32,7 +36,7 @@ export const Hero = ({ refSectionHero }: Props) => {
               href="https://wa.me/56962109122"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-[90%] lg:w-auto  px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg shadow-lg shadow-orange-600/30 hover:from-orange-500 hover:to-amber-500 transition-all duration-200"
+              className="flex justify-center w-full md:w-[90%] lg:w-auto  px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg shadow-lg shadow-orange-600/30 hover:from-orange-500 hover:to-amber-500 transition-all duration-200"
             >
               <div className="inline-flex items-center gap-2">
                 <span>Solicitar cotización</span>
@@ -44,12 +48,18 @@ export const Hero = ({ refSectionHero }: Props) => {
       </div>
       {/* Desktop */}
       <div className="  sm:flex items-center justify-center w-full lg:w-1/2">
-        <SwiperDesktop />
+        {/* <SwiperDesktop /> */}
+        <Image
+          src={imgAndamioDosD}
+          alt="Andamios 2D"
+          width={400}
+          height={400}
+        />
       </div>
       {/* Mobile */}
-      <div className="flex items-center justify-center w-full">
+      {/* <div className="flex items-center justify-center w-full">
         <SwiperMobile />
-      </div>
+      </div> */}
     </Container>
   );
 };
