@@ -1,40 +1,66 @@
 "use client";
+
 import { Container } from "@/components/ui";
 import { GalleryDesktop } from "./GalleryDesktop";
 import { GalleryMobile } from "./GalleryMobile";
-
-import img1 from "../../../public/img/img1.webp";
-import img2 from "../../../public/img/img2.webp";
-import img3 from "../../../public/img/img3.webp";
-import img4 from "../../../public/img/img4.webp";
-import img5 from "../../../public/img/img5.webp";
-import img6 from "../../../public/img/img6.webp";
-import img7 from "../../../public/img/img7.webp";
-import img8 from "../../../public/img/img8.webp";
-import img9 from "../../../public/img/img9.webp";
-import img10 from "../../../public/img/img10.webp";
-import img11 from "../../../public/img/img11.webp";
-import img12 from "../../../public/img/img12.webp";
-import img13 from "../../../public/img/img13.webp";
 
 interface Props {
   refSectionGallery: React.RefObject<HTMLDivElement | null>;
 }
 
 const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
+  {
+    id: 1,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608788/img13_z32pyo.webp`,
+  },
+  {
+    id: 2,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608788/img12_roygig.webp`,
+  },
+  {
+    id: 3,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608787/img11_dlscih.webp`,
+  },
+  {
+    id: 4,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608787/img10_enftls.webp`,
+  },
+  {
+    id: 5,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608786/img9_tiecut.webp`,
+  },
+  {
+    id: 6,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608786/img5_okb0sk.webp`,
+  },
+  {
+    id: 7,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608786/img8_c1whu3.webp`,
+  },
+  {
+    id: 8,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608786/img7_usgzxp.webp`,
+  },
+  {
+    id: 9,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img6_mv3mr7.webp`,
+  },
+  {
+    id: 10,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img2_whfxee.webp`,
+  },
+  {
+    id: 11,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img3_m9wgah.webp`,
+  },
+  {
+    id: 12,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img4_hrlbgr.webp`,
+  },
+  {
+    id: 13,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775611539/img-56_1_ob0l4l.webp`,
+  },
 ];
 
 export const Gallery = ({ refSectionGallery }: Props) => {

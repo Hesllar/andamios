@@ -9,8 +9,13 @@ import "swiper/css/pagination";
 
 import Image, { StaticImageData } from "next/image";
 
+interface Image {
+  id: number;
+  src: string;
+}
+
 interface Props {
-  images: StaticImageData[];
+  images: Image[];
 }
 
 export const GalleryMobile = ({ images }: Props) => {

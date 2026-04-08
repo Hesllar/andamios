@@ -1,8 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
 
-import imgClienteCarrera from "../../../public/img/img_cliente_los_carrera.webp";
-import imgClienteEsval from "../../../public/img/img_cliente_esval.webp";
 import { Container } from "@/components/ui";
 
 interface Props {
@@ -11,10 +9,12 @@ interface Props {
 
 const clients = [
   {
-    path: imgClienteCarrera,
+    id: 1,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608790/img_cliente_los_carrera_ahtjrd.webp`,
   },
   {
-    path: imgClienteEsval,
+    id: 2,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608789/img_cliente_esval_n7kr8a.webp`,
   },
 ];
 
@@ -39,12 +39,17 @@ export const OurClients = ({ refSectionOurClients }: Props) => {
             },
           )}
         >
-          {clients.map((client, index) => (
+          {clients.map((client) => (
             <div
-              key={index}
+              key={client.id}
               className="p-4 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/15 transition-all duration-200"
             >
-              <Image src={client.path} alt={`Cliente ${index + 1}`} />
+              <Image
+                src={client.src}
+                alt={`Cliente ${client.id}`}
+                width={300}
+                height={300}
+              />
             </div>
           ))}
         </div>

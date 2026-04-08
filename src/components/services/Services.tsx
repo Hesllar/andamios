@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import img2 from "../../../public/img/img2.webp";
 import { Container } from "@/components/ui";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
@@ -11,16 +10,18 @@ interface Props {
 
 const services = [
   {
+    id: 1,
     title: "Armado y desmontaje",
     description: `Servicio especializado en montaje y desmontaje de andamios tipo
               Euro, con seguridad, eficiencia y cumplimiento en cada proyecto.`,
-    image: img2,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img2_whfxee.webp`,
   },
   {
+    id: 2,
     title: "Arriendo de andamios",
     description: `Arriendo de andamios Euro certificados, ideales para obras que
               requieren seguridad, estabilidad y eficiencia.`,
-    image: img2,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608785/img2_whfxee.webp`,
   },
 ];
 
@@ -40,7 +41,7 @@ export const Services = ({ refSectionServices }: Props) => {
       <div className="flex flex-wrap w-full justify-around gap-6 lg:gap-0">
         {services.map((service) => (
           <div
-            key={service.title}
+            key={service.id}
             className="
             bg-[#1a1c27]/80 backdrop-blur-sm border border-orange-500/20 shadow-2xl shadow-black/50 rounded-lg h-fit
             ease-in-out duration-300
@@ -48,8 +49,10 @@ export const Services = ({ refSectionServices }: Props) => {
             hover:lg:scale-105 hover:border-orange-500/50"
           >
             <Image
-              src={service.image}
-              alt="img2"
+              src={service.src}
+              alt={service.title}
+              width={300}
+              height={300}
               className="rounded-t-lg h-[200px] sm:h-2/3 object-cover sm:object-fill"
             />
             <div className="flex flex-col justify-between px-4 py-2 h-auto sm:h-2/6">

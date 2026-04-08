@@ -6,7 +6,12 @@ import { Container } from "@/components/ui";
 import { SwiperDesktop } from "./SwiperDesktop";
 import { SwiperMobile } from "./SwiperMobile";
 
-import imgAndamioDosD from "../../../public/img/andamios-2d.webp";
+const images = [
+  {
+    id: 1,
+    src: `${process.env.NEXT_PUBLIC_URL_BASE_CLOUDINARY}/q_auto/f_auto/v1775608789/andamios-2d_ekdlec.webp`,
+  },
+];
 
 interface Props {
   refSectionHero: React.RefObject<HTMLDivElement | null>;
@@ -49,12 +54,16 @@ export const Hero = ({ refSectionHero }: Props) => {
       {/* Desktop */}
       <div className="  sm:flex items-center justify-center w-full lg:w-1/2">
         {/* <SwiperDesktop /> */}
-        <Image
-          src={imgAndamioDosD}
-          alt="Andamios 2D"
-          width={400}
-          height={400}
-        />
+
+        {images.map((img) => (
+          <Image
+            key={img.id}
+            src={img.src}
+            alt={`Andamios ${img.id}`}
+            width={400}
+            height={400}
+          />
+        ))}
       </div>
       {/* Mobile */}
       {/* <div className="flex items-center justify-center w-full">

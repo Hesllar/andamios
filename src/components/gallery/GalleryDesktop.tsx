@@ -4,18 +4,23 @@ import clsx from "clsx";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
+interface Image {
+  id: number;
+  src: string;
+}
+
 interface Props {
-  images: StaticImageData[];
+  images: Image[];
 }
 
 export const GalleryDesktop = ({ images }: Props) => {
-  const [imageActive, setImageActive] = useState<StaticImageData | null>(null);
+  const [imageActive, setImageActive] = useState<Image | null>(null);
 
   return (
     <>
       <div className="hidden lg:flex flex-wrap -m-4">
         {images.map((image, index) => (
-          <div key={index} className="sm:w-1/2 lg:w-1/3 p-4">
+          <div key={image.id} className="sm:w-1/2 lg:w-1/3 p-4">
             <div
               onClick={() => setImageActive(image)}
               className={clsx(
