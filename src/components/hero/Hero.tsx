@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import { FaArrowRight } from "react-icons/fa";
 import { Container } from "@/components/ui";
-import { SwiperDesktop } from "./SwiperDesktop";
-import { SwiperMobile } from "./SwiperMobile";
+// import { SwiperDesktop } from "./SwiperDesktop";
+// import { SwiperMobile } from "./SwiperMobile";
 
 const images = [
   {

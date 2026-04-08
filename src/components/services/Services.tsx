@@ -43,18 +43,19 @@ export const Services = ({ refSectionServices }: Props) => {
           <div
             key={service.id}
             className="
-            bg-[#1a1c27]/80 backdrop-blur-sm border border-orange-500/20 shadow-2xl shadow-black/50 rounded-lg h-fit
+            bg-[#1a1c27]/80 backdrop-blur-sm border border-orange-500/20 shadow-2xl shadow-black/50 rounded-lg h-fit w-full
             ease-in-out duration-300
             sm:max-w-sm sm:h-[650px]
             hover:lg:scale-105 hover:border-orange-500/50"
           >
-            <Image
-              src={service.src}
-              alt={service.title}
-              width={300}
-              height={300}
-              className="rounded-t-lg h-[200px] sm:h-2/3 object-cover sm:object-fill"
-            />
+            <div className="relative w-full h-[350px] sm:h-2/3 rounded-t-lg overflow-hidden">
+              <Image
+                src={service.src}
+                alt={service.title}
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-col justify-between px-4 py-2 h-auto sm:h-2/6">
               <h5 className="text-white font-bold text-2xl tracking-tight mb-2">
                 {service.title}
