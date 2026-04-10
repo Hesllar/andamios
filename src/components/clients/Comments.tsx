@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 import { Container } from "../ui";
 import { Stars } from "./Stars";
+import { useEffect, useEffectEvent, useState } from "react";
 
 const REVIEWS = [
   {
@@ -184,6 +185,23 @@ const REVIEWS = [
 ];
 
 export const Comments = () => {
+  const [reviewsOriginal, _] = useState(REVIEWS);
+
+  const [reviewsMutable, setReviewsMutable] = useState(reviewsOriginal);
+
+  const [showAllReviews, setShowAllReviews] = useState(false);
+
+  useEffect(() => {
+    if (reviewsOriginal.length > 10) {
+      setReviewsMutable(reviewsOriginal.slice(0, 10));
+    }
+  }, []);
+
+  const handleShowAllReviews = () => {
+    setShowAllReviews(true);
+    setReviewsMutable(reviewsOriginal);
+  };
+
   return (
     <Container>
       <div className="flex flex-col justify-center gap-10">
@@ -194,48 +212,62 @@ export const Comments = () => {
           </h2>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-orange-500/50" />
         </div>
-        <div className=" hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {REVIEWS.map((review) => (
-            <article
-              key={review.id}
-              className="flex flex-col gap-3 p-4 rounded-2xl border border-gray-100 bg-white hover:bg-slate-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200"
-            >
-              {/* Top row: avatar + name + date */}
-              <div className="flex items-start gap-3">
-                <div
-                  className={clsx(
-                    "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center",
-                    {
-                      [`${review.color} text-sm font-semibold`]: !review.img,
-                    },
-                  )}
-                >
-                  {review.img ? (
-                    <Image
-                      src={review.img}
-                      alt={review.name}
-                      width={40}
-                      height={40}
-                    />
-                  ) : (
-                    <span>{review.initials.toUpperCase()}</span>
-                  )}
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm font-semibold text-gray-900 truncate capitalize">
-                      {review.name}
-                    </span>
+        <div className="hidden sm:block">
+          <div className="sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {reviewsMutable.map((review) => (
+              <article
+                key={review.id}
+                className="flex flex-col gap-3 p-4 rounded-2xl border border-gray-100 bg-white hover:bg-slate-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200"
+              >
+                <div className="flex items-start gap-3">
+                  <div
+                    className={clsx(
+                      "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center",
+                      {
+                        [`${review.color} text-sm font-semibold`]: !review.img,
+                      },
+                    )}
+                  >
+                    {review.img ? (
+                      <Image
+                        src={review.img}
+                        alt={review.name}
+                        width={40}
+                        height={40}
+                      />
+                    ) : (
+                      <span>{review.initials.toUpperCase()}</span>
+                    )}
                   </div>
-                  <div className="mt-1">{<Stars rating={review.rating} />}</div>
+
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-sm font-semibold text-gray-900 truncate capitalize">
+                        {review.name}
+                      </span>
+                    </div>
+                    <div className="mt-1">
+                      {<Stars rating={review.rating} />}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {review.text ? review.text : "Sin comentario"}
-              </p>
-            </article>
-          ))}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {review.text ? review.text : "Sin comentario"}
+                </p>
+              </article>
+            ))}
+          </div>
+          {!showAllReviews && (
+            <div className="flex justify-center mt-4">
+              <button
+                className="w-1/2 flex justify-center gap-2 text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-amber-500 focus:ring-4 focus:ring-orange-500/30
+                font-medium rounded-lg text-lg px-3 py-3 items-center shadow-lg shadow-orange-600/20 transition-all duration-200"
+                onClick={handleShowAllReviews}
+              >
+                ¡Ver todas las reseñas!
+              </button>
+            </div>
+          )}
         </div>
         <div className="flex sm:hidden">
           <Swiper
@@ -252,7 +284,7 @@ export const Comments = () => {
             }}
             modules={[Pagination, Autoplay]}
           >
-            {REVIEWS.map((review) => (
+            {reviewsOriginal.map((review) => (
               <SwiperSlide key={review.id}>
                 <article className="flex flex-col gap-3 p-4 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-200">
                   {/* Top row: avatar + name + date */}
