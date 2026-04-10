@@ -1,14 +1,17 @@
+import { useEffect, useEffectEvent, useState } from "react";
 import Image from "next/image";
 
+import { FcGoogle } from "react-icons/fc";
 import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
 import { Container } from "../ui";
 import { Stars } from "./Stars";
-import { useEffect, useEffectEvent, useState } from "react";
+import styles from "./style.module.css";
 
 const REVIEWS = [
   {
@@ -184,7 +187,7 @@ const REVIEWS = [
   },
 ];
 
-export const Comments = () => {
+export const Reviews = () => {
   const [reviewsOriginal, _] = useState(REVIEWS);
 
   const [reviewsMutable, setReviewsMutable] = useState(reviewsOriginal);
@@ -192,9 +195,8 @@ export const Comments = () => {
   const [showAllReviews, setShowAllReviews] = useState(false);
 
   useEffect(() => {
-    if (reviewsOriginal.length > 10) {
+    if (reviewsOriginal.length > 10)
       setReviewsMutable(reviewsOriginal.slice(0, 10));
-    }
   }, []);
 
   const handleShowAllReviews = () => {
@@ -250,6 +252,7 @@ export const Comments = () => {
                       {<Stars rating={review.rating} />}
                     </div>
                   </div>
+                  <FcGoogle fontSize={26} />
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {review.text ? review.text : "Sin comentario"}
@@ -283,6 +286,7 @@ export const Comments = () => {
               clickable: false,
             }}
             modules={[Pagination, Autoplay]}
+            className={styles.swiper}
           >
             {reviewsOriginal.map((review) => (
               <SwiperSlide key={review.id}>
@@ -320,6 +324,7 @@ export const Comments = () => {
                         {<Stars rating={review.rating} />}
                       </div>
                     </div>
+                    <FcGoogle fontSize={26} />
                   </div>
                   {/* Review text */}
                   <p className="text-sm text-gray-600 leading-relaxed">

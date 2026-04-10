@@ -1,0 +1,7 @@
+.swiper {
+  padding-bottom: 40px !important; /* espacio para los bullets */
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
