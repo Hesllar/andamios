@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { Container } from "@/components/ui";
 import { Hero } from "@/components/hero";
 
-import { OurClients } from "@/components/clients";
+import { Comments, OurClients } from "@/components/clients";
 import { Services } from "@/components/services";
 import { Navbar } from "@/components/layout";
 import { Gallery } from "@/components/gallery";
@@ -31,6 +31,7 @@ export default function Home() {
         <Services refSectionServices={refSectionServices} />
         <Gallery refSectionGallery={refSectionGallery} />
         <OurClients refSectionOurClients={refSectionOurClients} />
+        <Comments />
       </Container>
     </>
   );

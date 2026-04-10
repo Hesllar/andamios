@@ -33,7 +33,7 @@ export const Services = ({ refSectionServices }: Props) => {
     >
       <div className="flex items-center gap-4 w-full">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent to-orange-500/50" />
-        <h2 className="text-3xl font-bold text-white tracking-wide uppercase px-2">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-wide uppercase px-2">
           Nuestros servicios
         </h2>
         <div className="flex-1 h-px bg-gradient-to-l from-transparent to-orange-500/50" />

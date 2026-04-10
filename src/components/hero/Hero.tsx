@@ -52,7 +52,7 @@ export const Hero = ({ refSectionHero }: Props) => {
         </div>
       </div>
       {/* Desktop */}
-      <div className="  sm:flex items-center justify-center w-full lg:w-1/2">
+      <div className="flex items-center justify-center w-full lg:w-1/2">
         {/* <SwiperDesktop /> */}
 
         {images.map((img) => (

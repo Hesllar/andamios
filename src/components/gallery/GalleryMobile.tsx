@@ -33,6 +33,7 @@ export const GalleryMobile = ({ images }: Props) => {
           modifier: 1,
           slideShadows: true,
         }}
+        loop={true}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
         className="!w-full !flex !justify-center !items-center"
