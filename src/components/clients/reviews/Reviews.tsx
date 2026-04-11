@@ -1,17 +1,14 @@
-import { useEffect, useEffectEvent, useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import { FcGoogle } from "react-icons/fc";
-import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Container } from "../ui";
-import { Stars } from "./Stars";
+import { Container } from "../../ui";
 import styles from "./style.module.css";
+import { Widget } from "./Widget";
 
 const REVIEWS = [
   {
@@ -217,47 +214,7 @@ export const Reviews = () => {
         <div className="hidden sm:block">
           <div className="sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {reviewsMutable.map((review) => (
-              <article
-                key={review.id}
-                className="flex flex-col gap-3 p-4 rounded-2xl border border-gray-100 bg-white hover:bg-slate-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200"
-              >
-                <div className="flex items-start gap-3">
-                  <div
-                    className={clsx(
-                      "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center",
-                      {
-                        [`${review.color} text-sm font-semibold`]: !review.img,
-                      },
-                    )}
-                  >
-                    {review.img ? (
-                      <Image
-                        src={review.img}
-                        alt={review.name}
-                        width={40}
-                        height={40}
-                      />
-                    ) : (
-                      <span>{review.initials.toUpperCase()}</span>
-                    )}
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-semibold text-gray-900 truncate capitalize">
-                        {review.name}
-                      </span>
-                    </div>
-                    <div className="mt-1">
-                      {<Stars rating={review.rating} />}
-                    </div>
-                  </div>
-                  <FcGoogle fontSize={26} />
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {review.text ? review.text : "Sin comentario"}
-                </p>
-              </article>
+              <Widget key={review.id} {...review} />
             ))}
           </div>
           {!showAllReviews && (
@@ -290,47 +247,7 @@ export const Reviews = () => {
           >
             {reviewsOriginal.map((review) => (
               <SwiperSlide key={review.id}>
-                <article className="flex flex-col gap-3 p-4 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-200">
-                  {/* Top row: avatar + name + date */}
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={clsx(
-                        "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center",
-                        {
-                          [`${review.color} text-sm font-semibold`]:
-                            !review.img,
-                        },
-                      )}
-                    >
-                      {review.img ? (
-                        <Image
-                          src={review.img}
-                          alt={review.name}
-                          width={40}
-                          height={40}
-                        />
-                      ) : (
-                        <span>{review.initials}</span>
-                      )}
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-semibold text-gray-900 truncate">
-                          {review.name}
-                        </span>
-                      </div>
-                      <div className="mt-1">
-                        {<Stars rating={review.rating} />}
-                      </div>
-                    </div>
-                    <FcGoogle fontSize={26} />
-                  </div>
-                  {/* Review text */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {review.text ? review.text : "Sin comentario"}
-                  </p>
-                </article>
+                <Widget key={review.id} {...review} />
               </SwiperSlide>
             ))}
           </Swiper>
