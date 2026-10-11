@@ -19,8 +19,8 @@ interface Props {
 
 export const Hero = ({ refSectionHero }: Props) => {
   return (
-    <Container className="flex flex-wrap" refGeneric={refSectionHero}>
-      <div className="flex items-center w-full lg:w-1/2">
+    <Container className="flex flex-wrap justify-center !pt-24" refGeneric={refSectionHero}>
+      <div className="flex flex-wrap items-center w-full lg:w-1/2">
         <div className="max-w-2xl mb-8">
           <div className="inline-block mb-3 px-3 py-1 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-sm font-semibold tracking-widest uppercase">
             Arriendos &amp; Montaje
@@ -52,7 +52,7 @@ export const Hero = ({ refSectionHero }: Props) => {
         </div>
       </div>
       {/* Desktop */}
-      <div className="flex items-center justify-center w-full lg:w-1/2">
+      <div className="flex items-center justify-center xl:justify-end w-full lg:w-1/2">
         {/* <SwiperDesktop /> */}
 
         {images.map((img) => (

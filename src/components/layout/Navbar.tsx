@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Disclosure } from "@headlessui/react";
 import clsx from "clsx";
-import { useState } from "react";
+
 
 import { useScrollToElement } from "@/hooks";
 import logo from "../../../public/img/logo.png";
@@ -16,7 +17,6 @@ interface Props {
 const navigation = ["Inicio", "Servicios", "Galería", "Clientes"];
 
 export const Navbar = ({ sectionRef }: Props) => {
-  const [inElement, setInElement] = useState(false);
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
   const scrollToElement = useScrollToElement();
 
@@ -25,17 +25,9 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <div className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40">
+    <div className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40 px-6 py-3 transition-all duration-300 ease-in-out hover:p-4 hover:lg:p-8">
       <nav
-        className={clsx(
-          "container relative flex flex-wrap items-center justify-between mx-auto transition-all duration-300 ease-in-out",
-          {
-            "p-4 lg:p-8": inElement,
-            "p-4 lg:py-2 lg:px-6": !inElement,
-          },
-        )}
-        onMouseEnter={() => setInElement(true)}
-        onMouseLeave={() => setInElement(false)}
+        className="container  relative flex flex-wrap items-center justify-between mx-auto "
       >
         {/* Logo */}
         <Link href="/">
@@ -46,7 +38,7 @@ export const Navbar = ({ sectionRef }: Props) => {
               height={56}
               alt="Jaramillo Andamios Pro"
               className="drop-shadow-sm"
-              style={{ width: 160, height: "auto" }}
+              style={{ height: "auto" }}
               priority
             />
           </div>
@@ -113,7 +105,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                 <span
                   onClick={() => {
                     if (!sectionRef[index].current) return;
-                    setInElement(false);
+                  
                     handleOnClick(index);
                   }}
                   className="cursor-pointer inline-block px-4 py-2 text-lg font-medium text-gray-200 no-underline rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"

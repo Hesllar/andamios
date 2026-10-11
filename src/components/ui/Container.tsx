@@ -10,7 +10,7 @@ export function Container(props: Readonly<ContainerProps>) {
   return (
     <div
       ref={props.refGeneric}
-      className={`container px-4 py-10 sm:p-8 sm:px-6 mx-auto ${
+      className={`container px-4 py-10 sm:py-8 sm:px-16 mx-auto ${
         props.className ? props.className : ""
       }`}
     >

@@ -26,13 +26,13 @@ export default function Home() {
           refSectionOurClients,
         ]}
       />
-      <Container>
+     
         <Hero refSectionHero={refSectionHero} />
         <Services refSectionServices={refSectionServices} />
         <Gallery refSectionGallery={refSectionGallery} />
         <OurClients refSectionOurClients={refSectionOurClients} />
         <Reviews />
-      </Container>
+      
     </>
   );
 }
