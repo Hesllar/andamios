@@ -14,6 +14,15 @@ const config: Config = {
     extend: {
       colors: {
         trueGray: colors.neutral,
+        industrial: {
+          background: "#FFFFFF",
+          surface: "#F3F4F6",
+          text: "#1F2937",
+          muted: "#4B5563",
+          accent: "#C2410C",
+          accentHover: "#9A3412",
+          border: "#D1D5DB",
+        },
       },
     },
     fontFamily: {
