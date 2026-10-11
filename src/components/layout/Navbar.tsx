@@ -26,12 +26,12 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <nav className="fixed top-0 z-50 h-20 w-full border-b border-industrial-border bg-industrial-background text-industrial-text shadow-sm">
+    <nav className="fixed top-0 z-50 h-20 w-full border-b border-industrial-highlight/20 bg-industrial-navigation text-industrial-onDark shadow-sm">
       <Container
         className="relative !py-0 flex h-full items-center justify-between"
       >
         {/* Logo */}
-        <Link href="/" className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-industrial-accent">
+        <Link href="/" className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-industrial-highlight">
           <div className="flex items-center">
             <Image
               src={logo}
@@ -54,7 +54,7 @@ export const Navbar = ({ sectionRef }: Props) => {
             aria-label={openMenuMobile ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={openMenuMobile}
             aria-controls="mobile-navigation"
-            className="flex h-11 w-11 items-center justify-center rounded-md text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-md text-industrial-onDark transition-colors hover:bg-industrial-borderOnDark hover:text-industrial-highlight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-highlight lg:hidden"
           >
             <svg
               className="w-6 h-6 fill-current"
@@ -82,7 +82,7 @@ export const Navbar = ({ sectionRef }: Props) => {
           <div
             id="mobile-navigation"
             className={clsx(
-              "absolute inset-x-0 top-20 w-full flex-col gap-1 border-b border-industrial-border bg-industrial-background px-4 py-2 text-industrial-text shadow-sm sm:px-16 lg:hidden",
+              "absolute inset-x-0 top-20 w-full flex-col gap-1 border-b border-industrial-borderOnDark bg-industrial-navigation px-4 py-2 text-industrial-onDark shadow-sm sm:px-16 lg:hidden",
               {
                 flex: openMenuMobile,
                 hidden: !openMenuMobile,
@@ -97,7 +97,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                   setOpenMenuMobile(false);
                   handleOnClick(index);
                 }}
-                className="min-h-11 w-full rounded-md px-4 py-3 text-left font-medium text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+                className="min-h-11 w-full rounded-md px-4 py-3 text-left font-medium text-industrial-onDark transition-colors hover:bg-industrial-borderOnDark hover:text-industrial-highlight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-highlight"
               >
                 {item}
               </button>
@@ -107,7 +107,7 @@ export const Navbar = ({ sectionRef }: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpenMenuMobile(false)}
-              className="my-2 inline-flex min-h-11 items-center justify-center rounded-md bg-industrial-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+              className="my-2 inline-flex min-h-11 items-center justify-center rounded-md bg-industrial-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-highlight"
             >
               Cotizar por WhatsApp
             </a>
@@ -122,7 +122,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                 <button
                   type="button"
                   onClick={() => handleOnClick(index)}
-                  className="inline-block rounded-md px-3 py-2 text-base font-medium text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+                  className="inline-block rounded-md px-3 py-2 text-base font-medium text-industrial-onDark transition-colors hover:bg-industrial-borderOnDark hover:text-industrial-highlight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-highlight"
                 >
                   {item}
                 </button>
@@ -133,7 +133,7 @@ export const Navbar = ({ sectionRef }: Props) => {
             href="https://wa.me/56962109122"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-industrial-accent px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-industrial-accent px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-highlight"
           >
             Cotizar por WhatsApp
           </a>

@@ -4,6 +4,7 @@
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-10-11
 > **Objetivo:** Preparar la identidad industrial compartida y rediseñar la navegación y el contacto de la landing sin interrumpir las secciones pendientes.
+> **Ajuste visual aprobado:** Grafito y naranja para cabecera, menú móvil y pie, confirmado por el usuario el 2026-10-11.
 
 ## 1. Alcance
 
@@ -13,7 +14,7 @@
 - Conservar Montserrat, nombre comercial y logo local.
 - Mantener `Container` como contenedor compartido con sus referencias de sección.
 - Crear `src/components/ui/RemoteImage.tsx` para los estados de error acordados.
-- Rediseñar `Navbar`, `Footer` y `PopupWidget` con superficies claras y texto grafito.
+- Rediseñar `Navbar` y `Footer` con superficies grafito, texto claro y acentos naranjas; conservar el verde de `PopupWidget`.
 - Mantener Inicio, Servicios, Galería y Clientes asociados a las referencias existentes.
 - Fijar cabecera de 80 px y compensación de desplazamiento de 96 px.
 - Incorporar cotización en la cabecera y en el pie.
@@ -44,9 +45,20 @@
 | `industrial.accentHover` | `#9A3412` | Estado hover de cotización.             |
 | `industrial.border`      | `#D1D5DB` | Bordes discretos.                       |
 
+La paleta base se conserva para las secciones de contenido y `RemoteImage`. La cabecera y el pie usan estos tokens adicionales, aprobados para mejorar la definición del logo blanco y plateado:
+
+| Token                              | Valor     | Uso                                            |
+| ---------------------------------- | --------- | ---------------------------------------------- |
+| `industrial.navigation`            | `#1F2937` | Cabecera y desplegable móvil grafito.           |
+| `industrial.footer`                | `#111827` | Pie grafito profundo.                          |
+| `industrial.onDark`                | `#F9FAFB` | Texto e iconos principales sobre grafito.       |
+| `industrial.mutedOnDark`           | `#D1D5DB` | Texto secundario, redes y crédito sobre grafito. |
+| `industrial.borderOnDark`          | `#374151` | Bordes discretos y superficies hover oscuras.   |
+| `industrial.highlight`             | `#FDBA74` | Acentos naranjas de hover y foco sobre grafito.  |
+
 Mantener `green-600` en el botón flotante de WhatsApp. Usar sombras suaves, foco visible y jerarquía consistente de títulos.
 
-Los componentes rediseñados declaran su propia superficie clara y color de texto. El fondo global oscuro continúa durante las entregas parciales. No modificar globalmente reglas de color de las secciones pendientes.
+La cabecera, el menú móvil y el pie declaran su propia superficie grafito y color de texto claro. Los botones de cotización conservan `industrial.accent`, texto blanco y `industrial.accentHover`; el foco y los enlaces usan `industrial.highlight` para destacar sobre grafito. El fondo global oscuro continúa durante las entregas parciales. No modificar globalmente reglas de color de las secciones pendientes.
 
 ### Contenedor
 
@@ -59,6 +71,7 @@ Los componentes rediseñados declaran su propia superficie clara y color de text
 ### Cabecera y navegación
 
 - Cabecera fija superior de 80 px en móvil y escritorio.
+- Usar `industrial.navigation` y texto `industrial.onDark` en la cabecera y el desplegable móvil, manteniendo el logo local.
 - No variar su altura o relleno al pasar el cursor.
 - Mantener el cambio entre menú móvil y escritorio en `lg` (1024 px).
 - Presentar el desplegable móvil debajo de la cabecera, sin aumentar sus 80 px.
@@ -73,7 +86,7 @@ Los componentes rediseñados declaran su propia superficie clara y color de text
 
 ### Pie y botón flotante
 
-- Mostrar Jaramillo Andamios Pro, cotización y redes sociales sobre superficie clara.
+- Mostrar Jaramillo Andamios Pro, cotización y redes sociales sobre `industrial.footer`, con texto `industrial.onDark` y texto secundario `industrial.mutedOnDark`.
 - Mantener Facebook: `https://web.facebook.com/profile.php?id=61588199405677`.
 - Mantener Instagram: `https://www.instagram.com/jaramilloandamiospro/`.
 - Mantener el crédito a Hesllar Linzmayer y su enlace de LinkedIn actual.
@@ -124,7 +137,7 @@ Cada paso deja la aplicación ejecutable. La presentación mixta durante las ent
 2. **Conservar el contrato del contenedor.** Mantener anchos, rellenos y referencias al reutilizar `Container` en navegación y contacto; ajustar la composición local si lo requiere la presentación responsive.
 3. **Crear la imagen compartida.** Implementar la reserva de espacio y aviso interior ante error en `RemoteImage`.
 4. **Completar el modo de avatar.** Permitir el aviso junto al espacio reservado sin introducir imágenes de respaldo.
-5. **Fijar la cabecera.** Aplicar superficie clara, texto grafito y altura de 80 px sin hover que modifique medidas.
+5. **Fijar la cabecera.** Aplicar superficie grafito, texto claro y altura de 80 px sin hover que modifique medidas.
 6. **Adaptar navegación de escritorio.** Sustituir los destinos clicables por controles semánticos y aplicar compensación de 96 px.
 7. **Adaptar navegación móvil.** Mantener el desplegable bajo la cabecera, estado accesible y cierre tras selección.
 8. **Añadir cotización a navegación.** Incorporar el destino actual de WhatsApp en las dos presentaciones.
@@ -134,8 +147,8 @@ Cada paso deja la aplicación ejecutable. La presentación mixta durante las ent
 
 ## 6. Criterios de aceptación
 
-- [ ] Existen los siete tokens `industrial` con los valores definidos.
-- [ ] Los componentes de esta entrega usan superficies claras y texto legible sin depender del fondo global.
+- [ ] Existen los siete tokens base `industrial` y los seis tokens adicionales para navegación y pie con los valores definidos.
+- [ ] Cabecera y menú móvil usan grafito `#1F2937`; el pie usa `#111827`, con texto claro, acentos naranjas y foco visible sin depender del fondo global.
 - [ ] `Container` conserva referencias y no provoca desplazamiento horizontal a 360, 768 y 1440 px.
 - [ ] La cabecera mide 80 px y no cambia al pasar el cursor.
 - [ ] Las etiquetas del menú llevan a las cuatro referencias correctas usando compensación de 96 px.
@@ -163,7 +176,7 @@ El error visual de `RemoteImage` se comprobará al integrarlo en las secciones d
 - **No: duplicar manejo de errores por sección.** Añade divergencias innecesarias.
 - **Sí: 80 px de cabecera y 96 px de compensación.** Define una separación constante de 16 px.
 - **No: medir dinámicamente la cabecera.** La altura fija acordada permite reutilizar el hook actual.
-- **Sí: superficies claras locales durante la transición.** Mantiene legibles las secciones todavía oscuras.
+- **Sí: grafito y naranja locales en navegación y pie.** Ajuste visual aprobado por el usuario tras revisar la entrega; mejora el contraste del logo blanco y plateado y conserva la paleta base para las secciones de contenido.
 - **No: activar el tema global en esta entrega.** El cambio se reserva para el final de SPEC 04.
 - **Sí: WhatsApp y redes actuales.** Conserva los canales aprobados.
 - **No: nuevas rutas, dependencias o persistencia.** No son necesarias para esta entrega.
