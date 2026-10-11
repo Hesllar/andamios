@@ -47,16 +47,21 @@ export const Navbar = ({ sectionRef }: Props) => {
 
         <>
           <button
+            type="button"
             onClick={() => {
-              setOpenMenuMobile(!openMenuMobile);
+              setOpenMenuMobile((isOpen) => !isOpen);
             }}
-            aria-label="Toggle Menu"
-            className="px-2 py-1 text-industrial-text rounded-md lg:hidden hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
+            aria-label={openMenuMobile ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={openMenuMobile}
+            aria-controls="mobile-navigation"
+            className="flex h-11 w-11 items-center justify-center rounded-md text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent lg:hidden"
           >
             <svg
               className="w-6 h-6 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
             >
               {openMenuMobile && (
                 <path
@@ -75,25 +80,27 @@ export const Navbar = ({ sectionRef }: Props) => {
           </button>
 
           <div
+            id="mobile-navigation"
             className={clsx(
-              "absolute inset-x-0 top-20 flex flex-wrap w-full border-b border-industrial-border bg-industrial-background px-4 py-2 text-industrial-text shadow-sm transition-all duration-300 ease-in-out sm:px-16 lg:hidden",
+              "absolute inset-x-0 top-20 w-full flex-col gap-1 border-b border-industrial-border bg-industrial-background px-4 py-2 text-industrial-text shadow-sm sm:px-16 lg:hidden",
               {
-                "opacity-100 visible translate-y-0": openMenuMobile,
-                "opacity-0 invisible -translate-y-2 h-0": !openMenuMobile,
+                flex: openMenuMobile,
+                hidden: !openMenuMobile,
               },
             )}
           >
             {navigation.map((item, index) => (
-              <span
+              <button
                 key={item}
+                type="button"
                 onClick={() => {
-                  setOpenMenuMobile(!openMenuMobile);
+                  setOpenMenuMobile(false);
                   handleOnClick(index);
                 }}
-                className="w-full px-4 py-2 text-industrial-text rounded-md hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
+                className="min-h-11 w-full rounded-md px-4 py-3 text-left font-medium text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
               >
                 {item}
-              </span>
+              </button>
             ))}
           </div>
         </>
