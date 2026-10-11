@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 
 import { useScrollToElement } from "@/hooks";
+import { Container } from "@/components/ui";
 import logo from "../../../public/img/logo.png";
 
 interface Props {
@@ -25,9 +26,9 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <div className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40 px-6 py-3 transition-all duration-300 ease-in-out hover:p-4 hover:lg:p-8">
-      <nav
-        className="container  relative flex flex-wrap items-center justify-between mx-auto "
+    <nav className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40 py-3 transition-all duration-300 ease-in-out hover:p-4 hover:lg:p-8">
+      <Container
+        className="relative !py-0 flex flex-wrap items-center justify-between"
       >
         {/* Logo */}
         <Link href="/">
@@ -116,7 +117,7 @@ export const Navbar = ({ sectionRef }: Props) => {
             ))}
           </ul>
         </div>
-      </nav>
-    </div>
+      </Container>
+    </nav>
   );
 };
