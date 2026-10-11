@@ -5,6 +5,32 @@
 > **Fecha:** 2026-10-11
 > **Objetivo:** Rediseñar la landing de Jaramillo Andamios Pro con una identidad industrial clara usando Tailwind CSS, manteniendo una única página y la cotización por WhatsApp.
 
+## Organización de la ejecución
+
+Revisión del 2026-10-11: esta spec conserva el estado **Aprobado** como marco general del rediseño.
+
+La ejecución se divide en tres contratos independientes, inicialmente en **Borrador**:
+
+| Orden | Spec | Entrega |
+| --- | --- | --- |
+| 1 | [SPEC 02](02-base-visual-navegacion-contacto.md) | Tokens visuales, imágenes compartidas, navegación, pie y contacto. |
+| 2 | [SPEC 03](03-portada-servicios-clientes.md) | Portada, servicios y logos de clientes. |
+| 3 | [SPEC 04](04-galeria-resenas-integracion.md) | Galería, reseñas y activación global del diseño claro. |
+
+El plan de la sección 5 queda como referencia del alcance original. Para implementar, se utilizarán los planes y criterios de cada entrega, en orden **02 → 03 → 04**. La aprobación de este marco no aprueba automáticamente las entregas.
+
+Las precisiones acordadas en la revisión se documentan en esas entregas:
+
+- Colores exactos bajo `industrial` en `tailwind.config.ts`.
+- Cabecera de 80 px y compensación de navegación de 96 px.
+- Componente compartido `src/components/ui/RemoteImage.tsx` para errores de imágenes.
+- Aviso junto al autor cuando falle un avatar, reservando sus 40 × 40 px.
+- Textos comerciales exactos en la SPEC 03.
+- Ampliación de galería como diálogo modal con Escape y gestión del foco.
+- Activación del fondo claro global al final de la SPEC 04.
+
+Las entregas concretan los detalles de ejecución de este marco. El alcance comercial, los recursos y las interacciones que se acordó conservar siguen siendo los de esta spec.
+
 ## 1. Alcance
 
 ### Incluido
