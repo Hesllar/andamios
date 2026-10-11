@@ -45,16 +45,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
+        <p className="mt-8 border-t border-industrial-border pt-6 text-center text-sm leading-relaxed text-industrial-muted">
           Copyright © {new Date().getFullYear()}. Desarrollado por{" "}
           <a
             href="https://www.linkedin.com/in/hesllar-linzmayer-8665a31a0/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            className="rounded-sm font-medium underline underline-offset-4 transition-colors hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
           >
             Hesllar Linzmayer.
           </a>
-        </div>
+        </p>
       </Container>
     </footer>
   );
