@@ -26,19 +26,19 @@ export const Navbar = ({ sectionRef }: Props) => {
   };
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-[#14151e]/90 backdrop-blur-md border-b border-orange-500/25 shadow-lg shadow-black/40 py-3 transition-all duration-300 ease-in-out hover:p-4 hover:lg:p-8">
+    <nav className="fixed top-0 z-50 h-20 w-full border-b border-industrial-border bg-industrial-background text-industrial-text shadow-sm">
       <Container
-        className="relative !py-0 flex flex-wrap items-center justify-between"
+        className="relative !py-0 flex h-full items-center justify-between"
       >
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-industrial-accent">
           <div className="flex items-center">
             <Image
               src={logo}
               width={160}
               height={56}
               alt="Jaramillo Andamios Pro"
-              className="drop-shadow-sm"
+              className="max-h-14 object-contain"
               style={{ height: "auto" }}
               priority
             />
@@ -51,7 +51,7 @@ export const Navbar = ({ sectionRef }: Props) => {
               setOpenMenuMobile(!openMenuMobile);
             }}
             aria-label="Toggle Menu"
-            className="px-2 py-1 text-gray-300 rounded-md lg:hidden hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
+            className="px-2 py-1 text-industrial-text rounded-md lg:hidden hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
           >
             <svg
               className="w-6 h-6 fill-current"
@@ -76,7 +76,7 @@ export const Navbar = ({ sectionRef }: Props) => {
 
           <div
             className={clsx(
-              "flex flex-wrap w-full transition-all duration-300 ease-in-out lg:hidden",
+              "absolute inset-x-0 top-20 flex flex-wrap w-full border-b border-industrial-border bg-industrial-background px-4 py-2 text-industrial-text shadow-sm transition-all duration-300 ease-in-out sm:px-16 lg:hidden",
               {
                 "opacity-100 visible translate-y-0": openMenuMobile,
                 "opacity-0 invisible -translate-y-2 h-0": !openMenuMobile,
@@ -90,7 +90,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                   setOpenMenuMobile(!openMenuMobile);
                   handleOnClick(index);
                 }}
-                className="w-full px-4 py-2 -ml-4 text-gray-300 rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
+                className="w-full px-4 py-2 text-industrial-text rounded-md hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
               >
                 {item}
               </span>
@@ -109,7 +109,7 @@ export const Navbar = ({ sectionRef }: Props) => {
                   
                     handleOnClick(index);
                   }}
-                  className="cursor-pointer inline-block px-4 py-2 text-lg font-medium text-gray-200 no-underline rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
+                  className="cursor-pointer inline-block px-4 py-2 text-lg font-medium text-industrial-text no-underline rounded-md hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
                 >
                   {item}
                 </span>
