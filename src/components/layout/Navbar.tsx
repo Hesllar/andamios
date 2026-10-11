@@ -22,7 +22,7 @@ export const Navbar = ({ sectionRef }: Props) => {
   const scrollToElement = useScrollToElement();
 
   const handleOnClick = (sectionId: number) => {
-    scrollToElement(sectionRef[sectionId], 100, "smooth");
+    scrollToElement(sectionRef[sectionId], 96, "smooth");
   };
 
   return (
@@ -100,19 +100,16 @@ export const Navbar = ({ sectionRef }: Props) => {
 
         {/* Desktop menu */}
         <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+          <ul className="flex items-center justify-end gap-1 list-none">
             {navigation.map((item, index) => (
-              <li className="mr-3 nav__item" key={item}>
-                <span
-                  onClick={() => {
-                    if (!sectionRef[index].current) return;
-                  
-                    handleOnClick(index);
-                  }}
-                  className="cursor-pointer inline-block px-4 py-2 text-lg font-medium text-industrial-text no-underline rounded-md hover:text-industrial-accent focus:text-industrial-accent focus:outline-none transition-colors"
+              <li key={item}>
+                <button
+                  type="button"
+                  onClick={() => handleOnClick(index)}
+                  className="inline-block rounded-md px-3 py-2 text-base font-medium text-industrial-text transition-colors hover:bg-industrial-surface hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
                 >
                   {item}
-                </span>
+                </button>
               </li>
             ))}
           </ul>
