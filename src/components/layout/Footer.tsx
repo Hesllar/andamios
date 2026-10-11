@@ -1,47 +1,45 @@
-import Link from "next/link";
-import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Container } from "@/components/ui";
 
 export function Footer() {
-  const legal = ["Terminos", "Privacidad"];
   return (
-    <div className="relative">
+    <footer className="relative border-t border-industrial-border bg-industrial-surface text-industrial-text">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-orange-500/20 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
-                <Link
-                  key={index}
-                  href="/"
-                  className="w-full px-4 py-2 text-gray-400 rounded-md hover:text-orange-400 focus:text-orange-400 focus:outline-none transition-colors"
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
+            <p className="text-xl font-bold">Jaramillo Andamios Pro</p>
           </div>
-          <div className="">
-            <div>Síguenos</div>
-            <div className="flex mt-5 space-x-5 text-gray-400">
+          <div>
+            <h2 className="text-base font-semibold">Cotización</h2>
+            <a
+              href="https://wa.me/56962109122"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md bg-industrial-accent px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+            >
+              Cotizar por WhatsApp
+            </a>
+          </div>
+          <div>
+            <h2 className="text-base font-semibold">Síguenos</h2>
+            <div className="mt-4 flex gap-3 text-industrial-muted">
               <a
                 href="https://web.facebook.com/profile.php?id=61588199405677"
                 target="_blank"
-                rel="noopener"
-                className="hover:text-orange-400 transition-colors"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
               >
                 <span className="sr-only">Facebook</span>
-                <FaFacebook size={26} />
+                <FaFacebook size={26} aria-hidden="true" focusable="false" />
               </a>
               <a
                 href="https://www.instagram.com/jaramilloandamiospro/"
                 target="_blank"
-                rel="noopener"
-                className="hover:text-orange-400 transition-colors"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:text-industrial-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
               >
                 <span className="sr-only">Instagram</span>
-                <FaInstagram size={26} />
+                <FaInstagram size={26} aria-hidden="true" focusable="false" />
               </a>
             </div>
           </div>
@@ -58,6 +56,6 @@ export function Footer() {
           </a>
         </div>
       </Container>
-    </div>
+    </footer>
   );
 }
