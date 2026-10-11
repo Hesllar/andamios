@@ -102,11 +102,20 @@ export const Navbar = ({ sectionRef }: Props) => {
                 {item}
               </button>
             ))}
+            <a
+              href="https://wa.me/56962109122"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpenMenuMobile(false)}
+              className="my-2 inline-flex min-h-11 items-center justify-center rounded-md bg-industrial-accent px-4 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+            >
+              Cotizar por WhatsApp
+            </a>
           </div>
         </>
 
         {/* Desktop menu */}
-        <div className="hidden text-center lg:flex lg:items-center">
+        <div className="hidden gap-4 text-center lg:flex lg:items-center">
           <ul className="flex items-center justify-end gap-1 list-none">
             {navigation.map((item, index) => (
               <li key={item}>
@@ -120,6 +129,14 @@ export const Navbar = ({ sectionRef }: Props) => {
               </li>
             ))}
           </ul>
+          <a
+            href="https://wa.me/56962109122"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-industrial-accent px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-industrial-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-industrial-accent"
+          >
+            Cotizar por WhatsApp
+          </a>
         </div>
       </Container>
     </nav>
